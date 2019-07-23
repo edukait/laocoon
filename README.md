@@ -31,8 +31,8 @@ with a newer means of counting cells without staring at a screen for hours on en
 ## Usage
 ### Import
 To download `laocoon`, you can either fork this repository or use PyPi via `pip`.
-```python
-$ pip install laocoon
+```
+pip install laocoon
 ```
 You must have `mahotas`, `numpy`, and `pandas` installed.
 ### Execution
@@ -40,7 +40,7 @@ Input the path to the folder containing your images, as well as the filetype of
 your images (acceptable image types are PNG, JPEG, JPG, and TIF). Each image must have
 four different channels: DAPI, EdU, RFP, and GFP in the folder, and all similar images must
 have the same prefix. Here's an example of how to execute the code:
-```python
+```
 python gausreg.py /Users/name/Documents/fucci_images tif
 ```
 You also have the option of implementing the quality control features:
@@ -49,7 +49,7 @@ these features). The default `gausreg.py` does not implement any form of quality
 `gausreg_eps.py` implements the epsilon value, `gausreg_bool.py` implements the boolean array,
 and `gausreg_both.py` implements both. These files are executed in the same manner on a command
 terminal as demonstrated above:
-```python
+```
 python gausreg_eps.py /Users/name/Documents/fucci_images tif
 python gausreg_bool.py /Users/name/Documents/fucci_images tif
 python gausreg_both.py /Users/name/Documents/fucci_images tif
