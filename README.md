@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100%" src="images/header.png"/>
+  <img width="100%" src="header.png"/>
 </p>
 
 ## Introduction
@@ -36,25 +36,26 @@ pip install laocoon
 ```
 You must have `mahotas`, `numpy`, and `pandas` installed.
 ### Execution
-Input the path to the folder containing your images, as well as the filetype of
+Input the _absolute_ path to the folder containing your images, as well as the filetype of
 your images (acceptable image types are PNG, JPEG, JPG, and TIF). Each image must have
 four different channels: DAPI, EdU, RFP, and GFP in the folder, and all similar images must
 have the same prefix. Here's an example of how to execute the code:
+
+## IS THIS RIGHT?
 ```
-python gausreg.py /Users/name/Documents/fucci_images tif
+python -m count_cells /Users/name/Desktop/images tif /Users/name/Downloads
 ```
-You also have the option of implementing the quality control features:
-the epsilon value, as well as the boolean array (read the paper for more information on
-these features). The default `gausreg.py` does not implement any form of quality control.
-`gausreg_eps.py` implements the epsilon value, `gausreg_bool.py` implements the boolean array,
-and `gausreg_both.py` implements both. These files are executed in the same manner on a command
-terminal as demonstrated above:
-```
-python gausreg_eps.py /Users/name/Documents/fucci_images tif
-python gausreg_bool.py /Users/name/Documents/fucci_images tif
-python gausreg_both.py /Users/name/Documents/fucci_images tif
-```
-All files will be saved with a .csv extension in the same directory as `fucci_images`.
+
+In executing this line of code, four methods of cell counting are performed on the images:
+1. Histogram equalization and Gaussian filter preprocessing, epsilon value quality control (saved as `hist_eps.csv`)
+2. Histogram equalization and Gaussian filter preprocessing (saved as `hist.csv`)
+3. Gaussian filter preprocessing and epsilon value quality control (saved as `eps.csv`)
+4. Just Gaussian filter preprocessing (`neither.csv`)
+
+The source code is divided into classes that represent the pipeline for counting the cells in
+each channel (DAPI, EdU, RFP, and GFP) and can be used individually, as well.
+
+All files will be saved with a .csv extension in the directory that you have specified.
 The files will also contain calculations of proportions of cells in certain parts of
 the cell cycle, as well as the original counts from the different image channels.
 

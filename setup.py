@@ -1,6 +1,7 @@
 from distutils.core import setup
 setup(
   name = 'laocoon',
+  setup=['bin/count_cells'],
   packages = ['laocoon'],
   version = '0.1',
   license='MIT',
@@ -8,7 +9,6 @@ setup(
   author = 'Kaitlin Lim',
   author_email = 'kaitlin.y.lim@gmail.com',
   url = 'https://github.com/edukait/laocoon',
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
   keywords = ['analysis', 'high-throughput', 'efficient'],
   install_requires=[
           'numpy',
