@@ -30,7 +30,7 @@ with a newer means of counting cells without staring at a screen for hours on en
 
 ## Usage
 ### Import
-To download `laocoon`, you can either fork this repository or use PyPi via `pip`.
+To download `laocoon`, you can either fork/download this repository or use PyPi via `pip`.
 ```
 pip install laocoon
 ```
@@ -39,13 +39,18 @@ You must have `mahotas`, `numpy`, and `pandas` installed.
 Input the _absolute_ path to the folder containing your images, as well as the file type of
 your images (acceptable image types are PNG, JPEG, JPG, and TIF). Each image must have
 four different channels: DAPI, EdU, RFP, and GFP in the folder, and all similar images must
-have the same prefix. Here's an example of how to execute the code:
+have the same prefix. Here's an example of how to execute the code after downloading it from `pip install`:
 ```
-count_cells /Users/name/Desktop/images tif /Users/name/Downloads
+count_cells /Users/name/Desktop/fucci_images tif /Users/name/Downloads
 ```
 The first argument is the absolute path to the folder containing the images, the second argumnet is the file type 
 of the images, and the third is the absolute path to where the outputs should be saved.
 
+If you are downloading it from GitHub, please navigate to the folder containing `count_cells.py` via your command 
+line, and then execute:
+```
+python count_cells.py /Users/name/Desktop/fucci_images tif /Users/name/Downloads
+```
 In executing this line of code, four methods of cell counting are performed on the images:
 1. Histogram equalization and Gaussian filter preprocessing, epsilon value quality control (saved as `hist_eps.csv`)
 2. Histogram equalization and Gaussian filter preprocessing (saved as `hist.csv`)
