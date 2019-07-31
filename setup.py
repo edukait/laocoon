@@ -3,7 +3,7 @@ setup(
   name = 'laocoon',
   setup=['bin/count_cells'],
   packages = ['laocoon'],
-  version = '0.1',
+  version = '0.1.1',
   license='MIT',
   description = 'Automatically and efficiently count the number of cells in a fluorescently stained image.',
   author = 'Kaitlin Lim',
