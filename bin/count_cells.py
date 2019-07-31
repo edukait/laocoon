@@ -2,6 +2,7 @@
 
 import pandas as pd
 import sys
+sys.path.append('../')
 import glob
 from laocoon import equalization as eq
 from laocoon.dapi_pipeline import *
